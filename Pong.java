@@ -6,7 +6,6 @@
  */
 
 import javax.swing.JPanel;
-import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -60,7 +59,6 @@ public class Pong extends JPanel implements ActionListener, MouseListener, KeyLi
 	
 	// Compute destination of the ball
 	private void computeDestination (Player player) {
-		int base;
 		if (ball_x_speed > 0)
 			player.destination = ball_y + (getWidth() - PADDING - WIDTH - RADIUS - ball_x) * (int)(ball_y_speed) / (int)(ball_x_speed);
 		else
@@ -108,7 +106,7 @@ public class Pong extends JPanel implements ActionListener, MouseListener, KeyLi
 			}
 		}
 		// KEYBOARD
-		else if (player.getType() == Player.MOUSE) {
+		else if (player.getType() == Player.KEYBOARD) {
 			if (key_up && !key_down) {
 				movePlayer (player, player.position - SPEED);
 			}
